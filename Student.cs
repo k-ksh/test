@@ -1,27 +1,22 @@
-﻿namespace MyNamespace
-{
-    class Student
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-        public string City { get; set; }
-        public List<string> CoursesAttended { get; set; }
+﻿using System.Xml.Linq;
 
-        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended)
+namespace MyNamespace
+{
+    class Student:Person
+    {
+     
+        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            City = city;
+          
             CoursesAttended = coursesAttended;
         }
+        public List<string> CoursesAttended { get; set; }
 
-        public void Print()
+
+
+        public override void DescribeYourself()
         {
-            Console.WriteLine($"Name: {FirstName} {LastName}");
-            Console.WriteLine($"Age: {Age}");
-            Console.WriteLine($"City: {City}");
+            base.DescribeYourself();
             Console.WriteLine("Courses Attended:");
             foreach (var course in CoursesAttended)
             {
