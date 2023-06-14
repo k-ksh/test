@@ -1,19 +1,15 @@
 ﻿using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace MyNamespace
 {
     class Student:Person
     {
      
-        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city)
+        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city, coursesAttended)
         {
           
-            CoursesAttended = coursesAttended;
         }
-        public List<string> CoursesAttended { get; set; }
-
-
-
         public override void DescribeYourself()
         {
             base.DescribeYourself();
@@ -28,6 +24,7 @@ namespace MyNamespace
         {
             CoursesAttended.Add(course);
         }
+
 
         public void DeleteCourse(string course)
         {
