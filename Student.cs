@@ -5,14 +5,15 @@ namespace MyNamespace
 {
     class Student:Person
     {
-     
-        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city, coursesAttended)
+        public List<string> CoursesAttended { get; set; }
+        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city)
         {
-          
+            CoursesAttended = coursesAttended;
         }
         public override void DescribeYourself()
         {
             base.DescribeYourself();
+            Console.WriteLine("Role: Student");
             Console.WriteLine("Courses Attended:");
             foreach (var course in CoursesAttended)
             {

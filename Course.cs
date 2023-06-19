@@ -9,17 +9,15 @@ namespace MyNamespace
         public int CourseDuration { get; set; }
         public int NumberOfStudents { get; set; }
         public List<string> StudentsThisYear  { get; set; }
-
-
-        public Course(string courseName, string teacherName, int courseDuration, int numberOfStudents, List<string> studentsThisYear)
+        public List<string> Teacher { get; set; }
+        public Course(string courseName, string teacherName, int courseDuration, int numberOfStudents, List<string> studentsThisYear, List<string> teacher)
         {
             CourseName = courseName;
             TeacherName = teacherName;
             CourseDuration = courseDuration;
             NumberOfStudents = numberOfStudents;
             StudentsThisYear = studentsThisYear;
-           
-
+            Teacher = teacher;
         }
 
         public void Print()
@@ -38,7 +36,6 @@ namespace MyNamespace
         public void AddStudent()
         {
             NumberOfStudents++;
-  
         }
 
 

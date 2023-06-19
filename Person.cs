@@ -9,16 +9,16 @@ namespace MyNamespace
         public string LastName { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
-        public List<string> CoursesAttended { get; set; }
       
 
-        public Person(string firstName, string lastName, int age, string city, List<string> coursesAttended)
+
+        public Person(string firstName, string lastName, int age, string city)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
             City = city;
-            CoursesAttended = coursesAttended;
+           
         }
 
         public virtual void DescribeYourself()
