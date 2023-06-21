@@ -4,13 +4,15 @@ namespace MyNamespace
 {
     class Teacher:Person
     {
-        public List<string> StudentsThisYear { get; set; }
-        public List<string> CoursesPresented { get; set; }
+        public List<Student> Student { get; set; }
+        public List<Course> Course { get; set; }
+        public int TeacherId { get; set; }
 
-        public Teacher(string firstName, string lastName, int age, string city, List<string> coursesPresented,List<string> studentsThisYear) : base(firstName,lastName,age,city)
+        public Teacher(int teacherId, string firstName, string lastName, int age, string city, List<Course> course, List<Student> student) : base(firstName,lastName,age,city)
         {
-            StudentsThisYear = studentsThisYear;
-            CoursesPresented = coursesPresented;
+            Student = student;
+            Course = course;
+            TeacherId = teacherId;
         }
 
      public override void DescribeYourself()
@@ -19,21 +21,34 @@ namespace MyNamespace
 
 
             Console.WriteLine("Courses Presented:");
-            foreach (var course in CoursesPresented)
+            foreach (var course in Course)
             {
-                Console.WriteLine(course);
+                Console.WriteLine($"ID: {course.CourseId}");
+                Console.WriteLine($"Name: {course.CourseName}");
+                // Retrieve other properties as needed
+                Console.WriteLine();
+
+                Console.WriteLine("Courses Taught:");
+                var commonCourses = Student.SelectMany(s => s.Course).Distinct().Intersect(Student.SelectMany(s => s.Course).Distinct());
+                foreach (var subj in commonCourses)
+                {
+                    Console.WriteLine($"- {subj.CourseName} (Student: {string.Join(", ", course.Student.Select(s => s.FirstName + " " + s.LastName))})");
+                }
+
+                //(Students: {string.Join(", ", course.Students.Select(s => s.FirstName + " " + s.LastName))})");
             }
+
         }
 
-        public void AddCourse(string course)
+        public void AddCourse(Course course)
         {
-            CoursesPresented.Add(course);
+            Course.Add(course);
         }
 
 
-        public void DeleteCourse(string course)
+        public void DeleteCourse(Course course)
         {
-            CoursesPresented.Remove(course);
+            Course.Remove(course);
         }
 
     }

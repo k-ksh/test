@@ -26,7 +26,8 @@ namespace MyNamespace
             Console.WriteLine($"Name: {FirstName} {LastName}");
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"City: {City}");
-           
+            Console.WriteLine();
+
         }
 
 

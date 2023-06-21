@@ -5,31 +5,43 @@ namespace MyNamespace
 {
     class Student:Person
     {
-        public List<string> CoursesAttended { get; set; }
-        public Student(string firstName, string lastName, int age, string city, List<string> coursesAttended) : base(firstName,lastName,age,city)
+        public List<Course> Course { get; set; }
+        
+        public int StudentId { get; set; }
+    
+
+        public Student(int studentId, string firstName, string lastName, int age, string city, List<Course> course) : base(firstName,lastName,age,city)
         {
-            CoursesAttended = coursesAttended;
+            StudentId = studentId;
+            Course = course;
+           
         }
+
         public override void DescribeYourself()
         {
             base.DescribeYourself();
             Console.WriteLine("Role: Student");
             Console.WriteLine("Courses Attended:");
-            foreach (var course in CoursesAttended)
+            foreach (var course in Course)
             {
-                Console.WriteLine(course);
+                Console.WriteLine($"ID: {course.CourseId}");
+                Console.WriteLine($"Name: {course.CourseName}");
+                // Retrieve other properties as needed
+                Console.WriteLine();
+
+
             }
         }
 
-        public void AddCourse(string course)
+        public void AddCourse(Course course)
         {
-            CoursesAttended.Add(course);
+            Course.Add(course);
         }
 
 
-        public void DeleteCourse(string course)
+        public void DeleteCourse(Course course)
         {
-            CoursesAttended.Remove(course);
+            Course.Remove(course);
         }
     }
 }
