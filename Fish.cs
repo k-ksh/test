@@ -6,7 +6,7 @@ namespace MyNamespace
     class Fish:Animal
     {
         public int depth;
-        public Fish(int depth, string name, string color, double lenght,string sound):base(name, color, lenght,sound)
+        public Fish(int depth, string name, string color, double lenght,string sound, int tail):base(name, color, lenght,sound,tail)
         {
             depth = 0;
         }
@@ -29,11 +29,7 @@ namespace MyNamespace
             return depth;
         }
 
-        public override void DescribeYourself()
-        {
-            base.DescribeYourself();
-            Console.WriteLine($"This fish is currently at a depth of {depth} units.");
-        }
+     
     }    
 }
 

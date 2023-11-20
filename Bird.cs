@@ -9,17 +9,22 @@ namespace MyNamespace
 {
      class Bird : Animal
     {
-        public int TailLength;
-        public Bird(int tailLength, string name, string color, double lenght, string sound) : base(name, color, lenght, sound)
+      
+        public Bird(string name, string color, double lenght, string sound, int tail) : base(name, color, lenght, sound, tail)
 
         {
-            TailLength = tailLength;
+            
         }
 
+        public override void MakeSound()
+        {
+
+            Console.WriteLine($"This bird {Name} makes the sound: piu piu");
+        }
         public virtual void Fly()
 
         {
-            Console.WriteLine($"this bird {Name} flies with tail length {TailLength} ");
+            Console.WriteLine($"this bird {Name} flies with tail length {Tail} ");
         }
     }
 }
