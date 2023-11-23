@@ -12,9 +12,9 @@ namespace MyNamespace
     {
         static void Main(string[] args)
         {
-            Dog dog1 = new Dog("Hope", "white", 40,"hav hav",4);
+            Dog dog1 = new Dog("Hope", "white", 40,"hav hav");
             Bird bird1 = new Bird("peacock", "multicolor", 10, "qua qua", 2);
-            Fish fish1 = new Fish (1,"fish", "green", 7, "...", 3);
+            Fish fish1 = new Fish (1,"fish", "green", 7, "...");
 
             
             dog1.MakeSound();

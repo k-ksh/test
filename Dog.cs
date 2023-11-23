@@ -6,7 +6,7 @@ namespace MyNamespace
     class Dog:Animal
     {
 
-        public Dog(string name, string color, double lenght, string sound, int tail):base(name, color, lenght, sound, tail)
+        public Dog(string name, string color, double lenght, string sound):base(name, color, lenght, sound)
         {
            
         }
