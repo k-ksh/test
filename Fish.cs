@@ -6,7 +6,7 @@ namespace MyNamespace
     class Fish:Animal
     {
         public int depth;
-        public Fish(int depth, string name, string color, double lenght,string sound):base(name, color, lenght,sound)
+        public Fish(int depth, string name, string color, double lenght):base(name, color, lenght)
         {
             depth = 0;
         }

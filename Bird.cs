@@ -10,7 +10,7 @@ namespace MyNamespace
      class Bird : Animal
     {
         public int Tail { get; protected set; }
-        public Bird(string name, string color, double lenght, string sound, int tail) : base(name, color, lenght, sound)
+        public Bird(string name, string color, double lenght, int tail) : base(name, color, lenght)
 
         {
             Tail = tail;

@@ -8,17 +8,17 @@ namespace MyNamespace
         public string Name { get; protected set; }
         public string Color { get; protected set; }
         public double Lenght { get; protected set; }
-        public string Sound { get; protected set; }
+      
         
 
 
-        public Animal(string name,string color, double lenght,string sound)
+        public Animal(string name,string color, double lenght)
             {
 
             Name = name;
             Color = color;
             Lenght = lenght;
-            Sound = sound;
+            
 
             }
         public virtual void MakeSound()
